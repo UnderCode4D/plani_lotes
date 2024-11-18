@@ -1,0 +1,31 @@
+services:
+  client-frontend-plani-lotes:
+    image: client-frontend-plani-lotes
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    init: true
+    volumes:
+      - ./frontend/vite.config.js:/usr/src/app/vite.config.js
+    networks:
+      - frontend
+    ports:
+      - 5173:5173
+    restart: unless-stopped
+
+  api-backend-plani-lotes:
+    image: api-backend-plani-lotes
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    init: true
+    networks:
+      - frontend
+      - backend
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+
+networks:
+  frontend:
+  backend:
