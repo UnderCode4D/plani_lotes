@@ -1,0 +1,12 @@
+# Overlay configuration to enable debuggers
+version: "3.9"
+services:
+  api-node:
+    command: 
+      - "npm"
+      - "run"
+      - "debug-docker"
+    ports:
+      - "3000:3000"
+      # inspect debug port
+      - "9229:9229"
