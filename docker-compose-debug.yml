@@ -2,7 +2,7 @@
 version: "3.9"
 
 services:
-  api-node:
+  api-backend-plani-lotes:
     command: 
       - "npm"
       - "run"
