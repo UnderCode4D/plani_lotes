@@ -1,7 +1,8 @@
-require('dotenv').config();
-
 const express = require('express');
 const morgan = require('morgan');
+
+require('dotenv').config();
+require('./config/mongoDBConnection.js');
 
 const app = express();
 
