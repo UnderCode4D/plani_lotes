@@ -4,18 +4,39 @@ const express = require('express');
 const morgan = require('morgan');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// setup the logger
+// Setup the logger
 app.use(morgan('tiny'));
+
+// Logger Middleware
+const logger = require('./middlewares/loggerMiddleware');
+logger.info('Logger initialized');
 
 app.get('/ping', async (_, res) => {
   res.send('pong');
 });
 
-const server = app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// Security Middlewares
+app.use(require('./middlewares/helmetMiddleware'));
+app.use(require('./middlewares/corsMiddleware'));
+app.use(require('./middlewares/rateLimiterMiddleware'));
+app.use(require('./middlewares/hppMiddleware'));
+
+// General Middlewares
+app.use(express.json());
+
+const startServer = async () => {
+  try {
+      // Start server
+      app.listen(PORT, () => {
+          logger.info(`Server running on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode!`);
+      });
+  } catch (err) {
+      logger.error('Failed to start server:', err);
+      process.exit(1);
+  }
+};
 
 process.on('SIGTERM', () => {
   console.debug('SIGTERM signal received: closing HTTP server');
@@ -23,3 +44,5 @@ process.on('SIGTERM', () => {
     console.debug('HTTP server closed');
   });
 });
+
+startServer();
