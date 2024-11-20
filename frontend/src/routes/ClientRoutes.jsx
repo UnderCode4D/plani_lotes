@@ -2,8 +2,8 @@
 const ClientRoutes = () => {
   return (
     <div>
-      <p>ClientRoutes</p>
-    </div>
+           <p>ClientRoutes</p>
+      </div>
   )
 }
 
