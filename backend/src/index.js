@@ -4,7 +4,6 @@ const express = require('express');
 const morgan = require('morgan');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Setup the logger
 app.use(morgan('tiny'));
@@ -26,6 +25,15 @@ app.use(express.json());
 app.get('/ping', async (_, res) => {
   res.send('pong');
 });
+
+// Global error handler middleware
+app.use(require('./middlewares/errorHandlerMiddleware'));
+
+// Error handling for unhandled rejections and uncaught exceptions
+require('./middlewares/errorHandlingMiddleware')(logger);
+
+// Server initialization
+const PORT = process.env.PORT || 3000;
 
 const startServer = async () => {
   try {
