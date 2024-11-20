@@ -2,25 +2,21 @@ const plugin = require("tailwindcss/plugin");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: {
-    enabled: true,
-    content: [
-      "./public/**/*.html",
-      "./public/*.html",
-      "./src/**/*.js",
-      "./src/*.js",
-      "./src/**/*.html",
-      "./src/*.html",
-      "./public/**/*.js",
-      "./public/*.js",
-    ],
-    options: {
-      safelist: [],
-    },
-  },
+  content: [
+    "./public/**/*.html",
+    "./src/**/*.{js,jsx,ts,tsx,vue}",
+  ],
   theme: {
     colors: {
       ...colors,
+      sky: colors.sky, // Renombrado desde lightBlue
+      stone: colors.stone, // Renombrado desde warmGray
+      neutral: colors.neutral, // Renombrado desde trueGray
+      gray: colors.gray, // Renombrado desde coolGray
+      slate: colors.slate, // Renombrado desde blueGray
+      red: colors.red,
+      blue: colors.blue,
+      green: colors.green,
     },
     extend: {
       minHeight: {
@@ -81,22 +77,8 @@ module.exports = {
       },
     },
   },
-  variants: [
-    "responsive",
-    "group-hover",
-    "focus-within",
-    "first",
-    "last",
-    "odd",
-    "even",
-    "hover",
-    "focus",
-    "active",
-    "visited",
-    "disabled",
-  ],
   plugins: [
-    require("@tailwindcss/forms"),
+    require("@tailwindcss/forms"), // Esto corrige el error
     plugin(function ({ addComponents, theme }) {
       const screens = theme("screens", {});
       addComponents([
