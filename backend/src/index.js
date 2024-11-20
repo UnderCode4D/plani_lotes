@@ -13,10 +13,6 @@ app.use(morgan('tiny'));
 const logger = require('./middlewares/loggerMiddleware');
 logger.info('Logger initialized');
 
-app.get('/ping', async (_, res) => {
-  res.send('pong');
-});
-
 // Security Middlewares
 app.use(require('./middlewares/helmetMiddleware'));
 app.use(require('./middlewares/corsMiddleware'));
@@ -25,6 +21,11 @@ app.use(require('./middlewares/hppMiddleware'));
 
 // General Middlewares
 app.use(express.json());
+
+// Health Check
+app.get('/ping', async (_, res) => {
+  res.send('pong');
+});
 
 const startServer = async () => {
   try {
