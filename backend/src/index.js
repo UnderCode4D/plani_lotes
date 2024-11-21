@@ -28,6 +28,7 @@ const userRoute = require('./routes/userRoutes');
 const lotRoute = require('./routes/lotRoutes');
 const customerRoute = require('./routes/customerRoutes'); 
 const landSubdivisionRoute = require('./routes/landSubdivisionRoutes'); 
+const paymentRoute = require('./routes/paymentRoutes'); 
 
 // Health Check
 app.get('/ping', async (_, res) => {
@@ -40,6 +41,7 @@ app.use('/api/users', userRoute);
 app.use('/api/lot', lotRoute);
 app.use('/api/customer', customerRoute);
 app.use('/api/land-subdivisions', landSubdivisionRoute);
+app.use('/api/payments', paymentRoute); 
 
 // Global error handler middleware
 app.use(require('./middlewares/errorHandlerMiddleware'));

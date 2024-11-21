@@ -6,11 +6,11 @@ const paymentSchema = new mongoose.Schema({
     required: false,
   },
   ammount: {
-    type: Double,
+    type: Number,
     required: true,
   },
   payment_date: {
-    type: Timestamp,
+    type: Date,
     required: true,
   },
   transaction_type: {
@@ -29,7 +29,7 @@ const paymentSchema = new mongoose.Schema({
     enum: [ 'Ingreso', 'Egreso' ],
   },
   remaining_payments: {
-    type: Integer,
+    type: Number,
     required: false,
   },
   description: {
