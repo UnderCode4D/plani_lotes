@@ -26,6 +26,7 @@ app.use(express.json());
 const authRoute = require('./routes/authRoutes');
 const userRoute = require('./routes/userRoutes');
 const lotRoute = require('./routes/lotRoutes');
+const customerRoute = require('./routes/customerRoutes'); 
 
 // Health Check
 app.get('/ping', async (_, res) => {
@@ -36,6 +37,7 @@ app.get('/ping', async (_, res) => {
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/lot', lotRoute);
+app.use('/api/customer', customerRoute);
 
 // Global error handler middleware
 app.use(require('./middlewares/errorHandlerMiddleware'));
