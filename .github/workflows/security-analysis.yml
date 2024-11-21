@@ -31,6 +31,6 @@ jobs:
     - name: Run security analysis
       run: |
         cd frontend
-        npm audit
+        npm audit fix --force
         cd ../backend
-        npm audit
+        npm audit fix --force
