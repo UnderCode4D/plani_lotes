@@ -27,6 +27,7 @@ const authRoute = require('./routes/authRoutes');
 const userRoute = require('./routes/userRoutes');
 const lotRoute = require('./routes/lotRoutes');
 const customerRoute = require('./routes/customerRoutes'); 
+const landSubdivisionRoute = require('./routes/landSubdivisionRoutes'); 
 
 // Health Check
 app.get('/ping', async (_, res) => {
@@ -38,6 +39,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/lot', lotRoute);
 app.use('/api/customer', customerRoute);
+app.use('/api/land-subdivisions', landSubdivisionRoute);
 
 // Global error handler middleware
 app.use(require('./middlewares/errorHandlerMiddleware'));
