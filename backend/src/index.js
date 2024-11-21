@@ -23,8 +23,9 @@ app.use(require('./middlewares/hppMiddleware'));
 app.use(express.json());
 
 // Routes
-const authRoute = require('./routes/authRoute');
+const authRoute = require('./routes/authRoutes');
 const userRoute = require('./routes/userRoutes');
+const lotRoute = require('./routes/lotRoutes');
 
 // Health Check
 app.get('/ping', async (_, res) => {
@@ -34,6 +35,7 @@ app.get('/ping', async (_, res) => {
 // Routes usage
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
+app.use('/api/lot', lotRoute);
 
 // Global error handler middleware
 app.use(require('./middlewares/errorHandlerMiddleware'));
