@@ -1,0 +1,36 @@
+name: Security Analysis
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  security-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        cd frontend
+        npm install
+        cd ../backend
+        npm install
+
+    - name: Run security analysis
+      run: |
+        cd frontend
+        npm audit
+        cd ../backend
+        npm audit
