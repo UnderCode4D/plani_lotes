@@ -24,14 +24,16 @@ app.use(express.json());
 
 // Routes
 const authRoute = require('./routes/authRoute');
+const userRoute = require('./routes/userRoutes');
 
 // Health Check
 app.get('/ping', async (_, res) => {
   res.send('pong');
 });
 
-// Use routes
+// Routes usage
 app.use('/api/auth', authRoute);
+app.use('/api/users', userRoute);
 
 // Global error handler middleware
 app.use(require('./middlewares/errorHandlerMiddleware'));
