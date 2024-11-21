@@ -22,10 +22,16 @@ app.use(require('./middlewares/hppMiddleware'));
 // General Middlewares
 app.use(express.json());
 
+// Routes
+const authRoute = require('./routes/authRoute');
+
 // Health Check
 app.get('/ping', async (_, res) => {
   res.send('pong');
 });
+
+// Use routes
+app.use('/api/auth', authRoute);
 
 // Global error handler middleware
 app.use(require('./middlewares/errorHandlerMiddleware'));
