@@ -2,7 +2,7 @@ const { Schema, mongoose } = require('mongoose');
 
 const lotSchema = new mongoose.Schema({
   lot_number: {
-    type: Integer,
+    type: Number,
     required: true,
   },
   location: {
@@ -10,7 +10,7 @@ const lotSchema = new mongoose.Schema({
     required: true,
   },
   total_price: {
-    type: Double,
+    type: Number,
     required: true,
   },
   purchase_method: {
