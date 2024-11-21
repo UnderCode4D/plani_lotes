@@ -23,6 +23,7 @@ app.use(require('./middlewares/hppMiddleware'));
 app.use(express.json());
 
 // Routes
+const healthCheckRoute = require('./routes/healthCheckRoutes');
 const authRoute = require('./routes/authRoutes');
 const userRoute = require('./routes/userRoutes');
 const lotRoute = require('./routes/lotRoutes');
@@ -30,12 +31,8 @@ const customerRoute = require('./routes/customerRoutes');
 const landSubdivisionRoute = require('./routes/landSubdivisionRoutes'); 
 const paymentRoute = require('./routes/paymentRoutes'); 
 
-// Health Check
-app.get('/ping', async (_, res) => {
-  res.send('pong');
-});
-
 // Routes usage
+app.use('/api', healthCheckRoute); 
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/lot', lotRoute);
