@@ -20,6 +20,7 @@
     "autoprefixer": "^10.4.20",
     "axios": "1.7.7",
     "chart.js": "2.9.4",
+    "frontend": "file:",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "postcss": "^8.4.49",
