@@ -15,7 +15,7 @@ export default function Login() {
     try {
       const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/login`, { email, password });
       localStorage.setItem("token", response.data.token);
-      navigate("/dashboard");
+      navigate("/admin/dashboard");
     } catch (err) {
       setError(err.response.data.message || "Error al iniciar sesión");
     }
