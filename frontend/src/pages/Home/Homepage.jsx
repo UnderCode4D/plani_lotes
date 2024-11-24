@@ -2,15 +2,13 @@
 import { Link } from "react-router-dom";
 
 // components
-
-import Navbar from '../../components/Navbars/AuthNavbar';
+import Navbar from '../../components/Navbars/Navbar';
 import Footer from '../../components/Footers/Footer';
 
 import teamImage1 from "../../assets/img/team-1-800x800.jpg";
 import teamImage2 from "../../assets/img/team-2-800x800.jpg";
 import teamImage3 from "../../assets/img/team-3-800x800.jpg";
 import teamImage4 from "../../assets/img/team-4-470x470.png";
-
 
 
 export default function Landing() {
