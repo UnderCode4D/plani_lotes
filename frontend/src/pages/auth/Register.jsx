@@ -9,16 +9,20 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("Empleado");
-  const [state, setState] = useState(1)
+  const [state, setState] = useState(1);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (password.length < 8) {
+      setError("La contraseña debe tener al menos 8 caracteres");
+      return;
+    }
     try {
       const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/signup`, { name, email, password, role, state });
       localStorage.setItem("token", response.data.token);
-      navigate("/dashboard");
+      navigate("/admin/dashboard");
     } catch (err) {
       setError(err.response.data.message || "Error al registrar usuario");
     }

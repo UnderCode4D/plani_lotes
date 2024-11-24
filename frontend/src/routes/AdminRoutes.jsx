@@ -1,13 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Login from "../../src/pages/auth/Login"; 
-import Register from "../../src/pages/auth/Register";
+import Admin from "../../src/pages/Admin/Admin";
 
 const AdminRoutes = () => {
   return (
     <Routes>
-      <Route path="/auth/login" element={<Login />} />
-      <Route path="/auth/register" element={<Register />} />
+      <Route path="/dashboard" element={<Admin />} />
     </Routes>
   );
 };
