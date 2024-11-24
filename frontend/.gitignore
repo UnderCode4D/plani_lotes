@@ -12,8 +12,6 @@ dist
 dist-ssr
 *.local
 
-src/assets/img/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
