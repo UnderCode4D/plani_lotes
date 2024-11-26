@@ -32,6 +32,7 @@ const lotRoute = require('./routes/lotRoutes');
 const landSubdivisionRoute = require('./routes/landSubdivisionRoutes'); 
 const paymentRoute = require('./routes/paymentRoutes'); 
 const paymentSummaryRoute = require('./routes/paymentSummaryRoutes'); 
+const contactRoute = require('./routes/contactRoutes'); 
 
 // Routes usage
 app.use('/api', healthCheckRoute); 
@@ -43,6 +44,7 @@ app.use('/api/lot', lotRoute);
 app.use('/api/land-subdivisions', landSubdivisionRoute);
 app.use('/api/payments', paymentRoute); 
 app.use('/api/payment-summary', paymentSummaryRoute);
+app.use('/api/contacts', contactRoute);
 
 // Global error handler middleware
 app.use(require('./middlewares/errorHandlerMiddleware'));
