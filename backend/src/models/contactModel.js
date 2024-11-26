@@ -13,6 +13,10 @@ const contactSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  phone_number: {
+    type: String,
+    required: false,
+  },
 }, { timestamps: true });
 
 contactSchema.set('toJSON', {
