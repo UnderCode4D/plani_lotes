@@ -26,21 +26,23 @@ app.use(express.json());
 const healthCheckRoute = require('./routes/healthCheckRoutes');
 const authRoute = require('./routes/authRoutes');
 const userRoute = require('./routes/userRoutes');
-const lotRoute = require('./routes/lotRoutes');
 const customerRoute = require('./routes/customerRoutes'); 
+const roleCountRoute = require('./routes/roleCountRoutes'); 
+const lotRoute = require('./routes/lotRoutes');
 const landSubdivisionRoute = require('./routes/landSubdivisionRoutes'); 
 const paymentRoute = require('./routes/paymentRoutes'); 
-const roleCountRoute = require('./routes/roleCountRoutes'); 
+const paymentSummaryRoute = require('./routes/paymentSummaryRoutes'); 
 
 // Routes usage
 app.use('/api', healthCheckRoute); 
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
-app.use('/api/lot', lotRoute);
 app.use('/api/customer', customerRoute);
+app.use('/api/role-counts', roleCountRoute);
+app.use('/api/lot', lotRoute);
 app.use('/api/land-subdivisions', landSubdivisionRoute);
 app.use('/api/payments', paymentRoute); 
-app.use('/api/role-counts', roleCountRoute);
+app.use('/api/payment-summary', paymentSummaryRoute);
 
 // Global error handler middleware
 app.use(require('./middlewares/errorHandlerMiddleware'));
