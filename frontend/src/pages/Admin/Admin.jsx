@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "../../../src/components/Navbars/UserNavbar";
@@ -6,15 +5,14 @@ import Sidebar from "../../../src/components/Sidebar";
 import HeaderStats from "../../components/Headers/HeaderStats";
 import FooterUser from "../../../src/components/Footers/FooterUser";
 
-import Dashboard from "../../pages/Admin/Dashboard";
-// import Maps from "views/admin/Maps";
-// import Settings from "views/admin/Settings";
-// import Tables from "views/admin/Tables";
+import Dashboard from "../../pages/admin/Dashboard";
+import Payments from "../../pages/admin/Payments";
+import Reports from "../../pages/admin/Reports";
 
 export default function Admin() {
   return (
     <>
-      <Sidebar />
+      <Sidebar userRole="admin" />
       <div className="relative md:ml-64 bg-blueGray-100">
         <Navbar />
         {/* Header */}
@@ -22,10 +20,10 @@ export default function Admin() {
         <div className="px-4 md:px-10 mx-auto w-full -m-24">
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            {/* <Route path="/admin/maps" element={<Maps />} />
-            <Route path="/admin/settings" element={<Settings />} />
-            <Route path="/admin/tables" element={<Tables />} /> */}
-            <Route path="/" element={<Navigate to="/admin/dashboard" />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/payments" element={<Payments />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="*" element={<Navigate to="/admin/dashboard" />} />
           </Routes>
           <FooterUser />
         </div>

@@ -9,6 +9,9 @@ import teamImage1 from "../../assets/img/team-1-800x800.jpg";
 import teamImage2 from "../../assets/img/team-2-800x800.jpg";
 import teamImage3 from "../../assets/img/team-3-800x800.jpg";
 import teamImage4 from "../../assets/img/team-4-470x470.png";
+import LogoAsesoria from "../../assets/img/logo-asesoria.png";
+import LogoRevisiones from "../../assets/img/logo-revisiones.png";
+import LogoEmpresa from "../../assets/img/logo-empresa.png";
 
 export default function Landing() {
   return (
@@ -20,7 +23,7 @@ export default function Landing() {
             className="absolute top-0 w-full h-full bg-center bg-cover"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
+                "url('https://ik.imagekit.io/livlabs/ik-seo/pma/assets/iStock-1485245299(1)_pt2c3MzYZ/aerial-view-of-a-large-suburban-housing-subdivision-located-just-south-of-houston-texas-shot-from-an-altitude-of-about-800-feet-during-a-helicopter-photo-flight.jpg?tr=w-auto,dpr-auto')",
             }}
           >
             <span
@@ -36,9 +39,11 @@ export default function Landing() {
                     Plani Lotes
                   </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
-                    This is a simple example of a Landing Page you can build
-                    using Notus React. It features multiple CSS components based
-                    on the Tailwind CSS design system.
+                  Bienvenido a Plani Lotes, donde tus sueños comienzan a construirse. 
+                  Descubre una amplia selección de terrenos diseñados para tus necesidades, 
+                  con opciones ideales para proyectos residenciales, comerciales o de inversión.
+                   Aquí encontrarás una experiencia fácil y confiable para explorar, planificar 
+                   y adquirir el lote perfecto para ti. ¡Construye el futuro que mereces!
                   </p>
                 </div>
               </div>
@@ -67,52 +72,55 @@ export default function Landing() {
 
         <section className="pb-20 bg-blueGray-200 -mt-24">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap">
-              <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                  <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                      <i className="fas fa-award"></i>
-                    </div>
-                    <h6 className="text-xl font-semibold">Awarded Agency</h6>
-                    <p className="mt-2 mb-4 text-blueGray-500">
-                      Divide details about your product or agency work into
-                      parts. A paragraph describing a feature will be enough.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="w-full md:w-4/12 px-4 text-center">
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                  <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
-                      <i className="fas fa-retweet"></i>
-                    </div>
-                    <h6 className="text-xl font-semibold">Free Revisions</h6>
-                    <p className="mt-2 mb-4 text-blueGray-500">
-                      Keep you user engaged by providing meaningful information.
-                      Remember that by this time, the user is curious.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
-                  <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
-                      <i className="fas fa-fingerprint"></i>
-                    </div>
-                    <h6 className="text-xl font-semibold">Verified Company</h6>
-                    <p className="mt-2 mb-4 text-blueGray-500">
-                      Write a few lines about each one. A paragraph describing a
-                      feature will be enough. Keep you user engaged!
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="flex flex-wrap">
+      {/* Tarjeta 1 */}
+      <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+          <div className="px-4 py-5 flex-auto">
+            {/* Logo Importado */}
+            <div className="w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400 flex items-center justify-center">
+              <img src={LogoAsesoria} alt="Asesoría Experta" className="w-8 h-8" />
             </div>
+            <h6 className="text-xl font-semibold">Asesoría Experta</h6>
+            <p className="mt-2 mb-4 text-blueGray-500">
+              Nuestro equipo está compuesto por especialistas certificados que te guiarán en cada paso del proceso, asegurando que encuentres el terreno perfecto para tus proyectos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Tarjeta 2 */}
+      <div className="w-full md:w-4/12 px-4 text-center">
+        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+          <div className="px-4 py-5 flex-auto">
+            {/* Logo Importado */}
+            <div className="w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400 flex items-center justify-center">
+              <img src={LogoRevisiones} alt="Revisiones Personalizadas" className="w-8 h-8" />
+            </div>
+            <h6 className="text-xl font-semibold">Revisiones Personalizadas</h6>
+            <p className="mt-2 mb-4 text-blueGray-500">
+              Explora diferentes opciones de terrenos y recibe propuestas personalizadas según tus necesidades. Estamos aquí para ajustar cada detalle hasta que estés 100% satisfecho.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Tarjeta 3 */}
+      <div className="pt-6 w-full md:w-4/12 px-4 text-center">
+        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+          <div className="px-4 py-5 flex-auto">
+            {/* Logo Importado */}
+            <div className="w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400 flex items-center justify-center">
+              <img src={LogoEmpresa} alt="Empresa Confiable" className="w-8 h-8" />
+            </div>
+            <h6 className="text-xl font-semibold">Empresa Confiable</h6>
+            <p className="mt-2 mb-4 text-blueGray-500">
+              Con años de experiencia en el mercado, ofrecemos transparencia y confianza en cada transacción. Tu seguridad y satisfacción son nuestra prioridad.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
             <div className="flex flex-wrap items-center mt-32">
               <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
@@ -123,13 +131,13 @@ export default function Landing() {
                   Working with us is a pleasure
                 </h3>
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
-                  Don't let your uses guess by attaching tooltips and popoves to
+                  Do not let your uses guess by attaching tooltips and popoves to
                   any element. Just make sure you enable them first via
                   JavaScript.
                 </p>
                 <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600">
                   The kit comes with three pre-built pages to help you get
-                  started faster. You can change the text and images and you're
+                  started faster. You can change the text and images and you are
                   good to go. Just make sure you enable them first via
                   JavaScript.
                 </p>
